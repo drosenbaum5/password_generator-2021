@@ -104,17 +104,17 @@ promptLength = () => {
 
 generatePassword = () => {
   let passwordLength = promptLength();
-  // if (Number.isNaN(passwordLength) && passwordLength >= 8 && passwordLength <= 128) {
-  //   console.log("Please enter a numerical value between 8 and 128");
-  //   alert("Please enter a numerical value");
-  //   promptLength();
-  // }
-
-  if (Number.isNaN(passwordLength)) {
+  if (Number.isNaN(passwordLength) && passwordLength < 8 && passwordLength <= 128) {
     console.log("Please enter a numerical value between 8 and 128");
     alert("Please enter a numerical value");
     generatePassword();
   }
+
+  // if (Number.isNaN(passwordLength)) {
+  //   console.log("Please enter a numerical value between 8 and 128");
+  //   alert("Please enter a numerical value");
+  //   generatePassword();
+  // }
 };
 
 // Add event listener to generate button
